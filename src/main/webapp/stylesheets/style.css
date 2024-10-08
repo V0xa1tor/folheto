@@ -463,7 +463,7 @@ header {
             td.option {
                 background-color: transparent;
 
-                display: none;
+                /* display: none; */
             }
             
             td.option button {

@@ -12,16 +12,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/adm")
-public class AdministrationController extends HttpServlet {
+public class Controller extends HttpServlet {
 
-    public static final String ADM_INDEX_PAGE = "/WEB-INF/adm/index.jsp";
-    public static final String ADM_LOGIN_PAGE = "/WEB-INF/adm/login.jsp";
+    public static final String INDEX_PAGE = "/WEB-INF/adm/index.jsp";
+    public static final String LOGIN_PAGE = "/WEB-INF/adm/login.jsp";
+    public static final String ADMINISTRATORS_PAGE = "/WEB-INF/adm/administrators.jsp";
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException ,IOException {
         if (isUserAuthenticated(request.getCookies())) {
-            request.getRequestDispatcher(ADM_INDEX_PAGE).forward(request, response);
+            request.getRequestDispatcher(INDEX_PAGE).forward(request, response);
         } else {
-            request.getRequestDispatcher(ADM_LOGIN_PAGE).forward(request, response);
+            request.getRequestDispatcher(LOGIN_PAGE).forward(request, response);
         }
     }
     

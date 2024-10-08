@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/stylesheets/signin.css">
-
 <header>
 
     <div class="first">

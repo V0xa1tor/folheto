@@ -1,11 +1,4 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
-<%@ page import="dev.emz.folheto.controller.adm.AdministrationController" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
-<% // Authenticate
-if (AdministrationController.isUserAuthenticated(request.getCookies()))
-    response.sendRedirect("/adm");
-%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,6 +12,7 @@ if (AdministrationController.isUserAuthenticated(request.getCookies()))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/signin.css">
 
 </head>
 <body>
