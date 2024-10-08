@@ -14,11 +14,14 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/adm")
 public class AdministrationController extends HttpServlet {
 
+    public static final String ADM_INDEX_PAGE = "/WEB-INF/adm/index.jsp";
+    public static final String ADM_LOGIN_PAGE = "/WEB-INF/adm/login.jsp";
+
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException ,IOException {
         if (isUserAuthenticated(request.getCookies())) {
-            request.getRequestDispatcher("/WEB-INF/adm/index.jsp").forward(request, response);
+            request.getRequestDispatcher(ADM_INDEX_PAGE).forward(request, response);
         } else {
-            request.getRequestDispatcher("/WEB-INF/adm/login.jsp").forward(request, response);
+            request.getRequestDispatcher(ADM_LOGIN_PAGE).forward(request, response);
         }
     }
     

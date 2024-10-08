@@ -16,7 +16,7 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/adm/login.jsp").forward(request, response);
+        request.getRequestDispatcher(AdministrationController.ADM_LOGIN_PAGE).forward(request, response);
     }
 
     @Override
