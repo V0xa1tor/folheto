@@ -463,7 +463,11 @@ header {
             td.option {
                 background-color: transparent;
 
-                /* display: none; */
+                display: none;
+            }
+
+            tr:hover > td.option {
+                display: table-cell;
             }
             
             td.option button {

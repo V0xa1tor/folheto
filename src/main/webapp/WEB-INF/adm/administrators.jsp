@@ -75,7 +75,7 @@
                                 <button class="button edit-button">
                                     <img src="/images/edit.svg" alt="Editar">
                                 </button>
-                                <button class="button delete-button">
+                                <button class="button delete-button" onclick="location = '/adm/administrators/delete?username=${adm.getUsername()}'">
                                     <img src="/images/delete.svg" alt="Excluir">
                                 </button>
                             </td>

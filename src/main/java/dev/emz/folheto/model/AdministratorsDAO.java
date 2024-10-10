@@ -1,5 +1,6 @@
 package dev.emz.folheto.model;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +8,30 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdministratorsDAO {
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/adm/administrators/delete")
+public class AdministratorsDAO extends HttpServlet {
+
+    public static void main(String[] args) {
+        for (int i = 0; i <= 5; i++) {
+            Administrator adm = new Administrator("user"+i, ""+i+i+i);
+            create(adm);
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String username = request.getParameter("username");
+
+        delete(username);
+        response.sendRedirect("/adm/administrators");
+    }
 
     public static boolean create(Administrator adm) {
         try (Connection conn = ConnectionFactory.getConnection()) {

@@ -195,7 +195,7 @@ function administratorForm(data) {
 
     const image = document.createElement("img");
     image.loading = "lazy";
-    image.src = "/projetofolheto/adm.folheto/images/person.svg";
+    image.src = "/images/person.svg";
     image.id = dataName + `-${windowNumber}`;
 
     const imageContainer = document.createElement("div");
@@ -230,7 +230,7 @@ function administratorForm(data) {
     removeImage.innerHTML = "Remover";
     removeImage.onclick = () => {
         imageInput.value = "";
-        image.src = "/projetofolheto/adm.folheto/images/person.svg";
+        image.src = "/images/person.svg";
     }
 
     editImageField.append(imageInputLabel);
